@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import ShapFeatureChart from './ShapFeatureChart';
 
-const API_URL = 'http://127.0.0.1:8000/predict';
+const API_URL = 'https://medrisk-ai-backend.onrender.com/predict';
 
 const INITIAL_FORM = {
   Age: '',
