@@ -69,9 +69,7 @@ for name, model in Models.items():
     model.fit(X_train_processed, y_train)
     y_pred = model.predict(X_test_processed)
     y_prob = model.predict_proba(X_test_processed)[:, 1]
-    print(f"\n{'='*40}")
     print(f"{name}")
-    print(f"{'='*40}")
     print(classification_report(y_test, y_pred))
     print(f"ROC-AUC: {roc_auc_score(y_test, y_prob):.4f}")
 
