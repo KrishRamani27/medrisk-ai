@@ -42,6 +42,8 @@ function ShapFeatureChart({ shapValues }) {
   if (!features.length) return null;
 
   const maxAbs = Math.max(...features.map((f) => Math.abs(f.value)), 0.001);
+  // Bars grow from the center axis; each side is half the track (50% = full side).
+  const maxBarWidthPct = 50;
 
   return (
     <div className="shap-chart">
@@ -59,7 +61,8 @@ function ShapFeatureChart({ shapValues }) {
 
       <ul className="shap-rows">
         {features.map((feature) => {
-          const widthPct = (Math.abs(feature.value) / maxAbs) * 100;
+          const widthPct =
+            (Math.abs(feature.value) / maxAbs) * maxBarWidthPct;
           const isPositive = feature.value >= 0;
 
           return (
