@@ -1,0 +1,126 @@
+.shap-chart {
+  text-align: left;
+  background: var(--bg-elevated);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.shap-chart-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.shap-chart-subtitle {
+  margin: 0.2rem 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.shap-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.shap-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.shap-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.shap-legend-negative .shap-legend-swatch {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+.shap-legend-positive .shap-legend-swatch {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+}
+
+.shap-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.shap-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, 1.4fr) 3.25rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.shap-label {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shap-bar-track {
+  position: relative;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+
+.shap-axis {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(139, 163, 176, 0.35);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.shap-bar {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  z-index: 0;
+}
+
+.shap-bar-negative {
+  right: 50%;
+  background: linear-gradient(270deg, #4ade80, #22c55e);
+}
+
+.shap-bar-positive {
+  left: 50%;
+  background: linear-gradient(90deg, #f87171, #ef4444);
+}
+
+.shap-value {
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font-weight: 600;
+}
+
+.shap-value-positive {
+  color: var(--high-risk);
+}
+
+.shap-value-negative {
+  color: var(--low-risk);
+}
